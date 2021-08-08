@@ -13,6 +13,12 @@ namespace Blood_Donation.Models
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
         }
+        public virtual DbSet<User> Users { set; get; }
+        public virtual DbSet<DonationAppointment> DonationAppointments { set; get; }
+        public virtual DbSet<Hospital> Hospitals { set; get; }
+        public virtual DbSet<HospitalAppointment> HospitalAppointments { set; get; }
+        public virtual DbSet<History> Histories { set; get; }
+
 
     }
 }

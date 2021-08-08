@@ -4,14 +4,16 @@ using Blood_Donation.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Blood_Donation.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210804203232_Tabels")]
+    partial class Tabels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,29 +47,6 @@ namespace Blood_Donation.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("DonationAppointments");
-                });
-
-            modelBuilder.Entity("Blood_Donation.Models.History", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<byte>("Day")
-                        .HasColumnType("tinyint");
-
-                    b.Property<DateTime>("Time")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Histories");
                 });
 
             modelBuilder.Entity("Blood_Donation.Models.HospitalAppointment", b =>
@@ -342,15 +321,6 @@ namespace Blood_Donation.Migrations
                         .HasForeignKey("UserId");
 
                     b.Navigation("Hospital");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Blood_Donation.Models.History", b =>
-                {
-                    b.HasOne("Blood_Donation.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });
