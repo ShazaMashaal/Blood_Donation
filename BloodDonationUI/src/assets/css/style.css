@@ -13,19 +13,24 @@ body {
   color: #444444;
 }
 
-a {
-  text-decoration: none;
-  color: #5cb874;
-}
 
-a:hover {
-  color: #80c792;
+.test {
+  font-size: larger;
+  color: #ebe5e3;
   text-decoration: none;
+  background-color: #d31111;
+  border-radius: 5%;
+  padding: 5px;
+}
+.cardbg :hover{
+  color: red;
+  cursor: pointer;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
+
 
 /*--------------------------------------------------------------
 # Back to top button
