@@ -1,18 +1,41 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {APP_BASE_HREF} from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { RegisterHospitalComponent } from './register-hospital/register-hospital.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
+const routes: Routes = [
+  { path: '', component: HomePageComponent},
+  {path: 'register',component: RegisterComponent},
+  {path: 'registerHospital',component: RegisterHospitalComponent},
+  {path: 'signin',component: SignInComponent},
+
+
+  ];
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    RegisterComponent,
+    HomePageComponent,
+    RegisterHospitalComponent,
+    SignInComponent,
   ],
+
   imports: [
-    BrowserModule
+    BrowserModule,
+    [RouterModule.forRoot(routes)],
   ],
-  providers: [],
+  exports: [RouterModule],
+
+
+  providers: [
+    {provide: APP_BASE_HREF, useValue : '/' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
