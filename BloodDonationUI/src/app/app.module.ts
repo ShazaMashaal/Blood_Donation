@@ -8,12 +8,16 @@ import { RegisterComponent } from './register/register.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RegisterHospitalComponent } from './register-hospital/register-hospital.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { WhyGiveBloodComponent } from './why-give-blood/why-give-blood.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent},
   {path: 'register',component: RegisterComponent},
   {path: 'registerHospital',component: RegisterHospitalComponent},
-  {path: 'signin',component: SignInComponent},
+   {path: 'signin',component: SignInComponent},
+   {path: 'whyGiveBlood',component: WhyGiveBloodComponent},
+
+
 
 
   ];
@@ -24,6 +28,7 @@ const routes: Routes = [
     HomePageComponent,
     RegisterHospitalComponent,
     SignInComponent,
+    WhyGiveBloodComponent,
   ],
 
   imports: [
