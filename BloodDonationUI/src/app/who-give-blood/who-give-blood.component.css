@@ -1,0 +1,15 @@
+.whyregister{
+  border: 1px solid rgba(10, 94, 10, 0.548);
+  padding: 1.5rem;
+  background-color: #f8fcf6;
+}
+
+.whyul{
+  list-style-type: none;
+
+}
+.whyul li{
+  padding: .2rem;
+}
+
+
